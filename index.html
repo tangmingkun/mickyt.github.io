@@ -191,25 +191,15 @@
 <p><strong>小结：以下为HEXO常用命令：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot;  # hexo new &quot;我的博客&quot; - 新建文章的缩写</span><br><span class="line">hexo g            # hexo generate - 生成静态网页的缩写</span><br><span class="line">hexo s            # hexo server - 启动服务预览的缩写</span><br><span class="line">hexo d            # hexo deploy - 开始部署的缩写</span><br><span class="line">hexo clean        # 清楚缓存</span><br><span class="line">hexo deploy -g    # 组合命令，生成后部署</span><br><span class="line">hexo server -g    # 组合命令，生成后启动服务预览</span><br></pre></td></tr></table></figure></p>
 <p>接下来就是绑定自己的域名部分了<del>~</del>~~~~</p>
 <h1 id="二、将博客绑定到自己的域名上"><a href="#二、将博客绑定到自己的域名上" class="headerlink" title="二、将博客绑定到自己的域名上"></a>二、将博客绑定到自己的域名上</h1><p>我是使用GoDaddy + DNSPOD来绑定的，如果有更好的，希望能分享让我学习学习。</p>
-<ol>
-<li>首先需要在GoDaddy中注册一个账号，并且购买一个域名；</li>
-<li>然后需要在DNSPOD中注册一个账号，并解析域名（购买的域名）；</li>
-<li>登录GoDaddy，找到我的域名并进入管理DNS，将其设置为自定义域名服务武器，如：</li>
-</ol>
+<p>1.首先需要在GoDaddy中注册一个账号，并且购买一个域名；<br>2.然后需要在DNSPOD中注册一个账号，并解析域名（购买的域名）；<br>3.登录GoDaddy，找到我的域名并进入管理DNS，将其设置为自定义域名服务武器，如：</p>
 <p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/binding-domain-name1.png" alt="image"><br><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/binding-domain-name2.png" alt="image"></p>
-<ol start="4">
-<li>登录DNSPOD配置域名解析信息</li>
-</ol>
+<p>4.登录DNSPOD配置域名解析信息</p>
 <p>在记录管理中，添加两条记录，如：</p>
 <p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/binding-domain-name3.png" alt="image"></p>
 <p>其中GitHub的IP获取方式为，打开CMD控制台，输入以下命令即可获取到IP，其中将username替换成自己的用户名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping username.github.io</span><br></pre></td></tr></table></figure></p>
-<ol start="5">
-<li>打开本地的HEXO下的source文件夹，新建一个CNAME文件（无后缀名），打开编辑文件，添加你的网站域名，如***.com，然后使用hexo g 和 hexo d上传部署。注意：不需要前面的http://，也不需要www。如：</li>
-</ol>
+<p>5.打开本地的HEXO下的source文件夹，新建一个CNAME文件（无后缀名），打开编辑文件，添加你的网站域名，如***.com，然后使用hexo g 和 hexo d上传部署。注意：不需要前面的http://，也不需要www。如：</p>
 <p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/binding-domain-name4.png" alt="image"></p>
-<ol start="6">
-<li>最后等待DNS配置生效即可，过10分钟后在去访问域名看看是否配置成功，至此完成博客绑定到自己的域名上。</li>
-</ol>
+<p>6.最后等待DNS配置生效即可，过10分钟后在去访问域名看看是否配置成功，至此完成博客绑定到自己的域名上。</p>
 
       
 
