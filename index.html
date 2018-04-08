@@ -154,53 +154,10 @@
 <h2 id="2-安装Node-js"><a href="#2-安装Node-js" class="headerlink" title="2.安装Node.js"></a>2.安装Node.js</h2><p>下载<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>，一直Next即可。</p>
 <h2 id="3-GitHub配置"><a href="#3-GitHub配置" class="headerlink" title="3.GitHub配置"></a>3.GitHub配置</h2><p>登录GitHub，点击New repository进行创建一个新的存储库</p>
 <p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/new-repository.png" alt="image"></p>
-<p>进入创建页面，库名称Repository name是必填项（==<em>格式为：username.github.</em>io，其中username必须是你注册时的username，我开始就进了这个坑o(╥﹏╥)o**==），Description为描述，其余的不需更改什么，最后直接点击Create repository就完成了。</p>
-<p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/new-repository-html.png" alt="image"></p>
-<h2 id="4-配置GitHub-SSH密钥"><a href="#4-配置GitHub-SSH密钥" class="headerlink" title="4.配置GitHub SSH密钥"></a>4.配置GitHub SSH密钥</h2><p>第一步：在桌面空白处点击右键，选择Git Bash Here完成生成ssh步骤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your&apos;s emaill address&quot;</span><br></pre></td></tr></table></figure></p>
-<p>将your’s emaill address更改为你注册的GitHub邮箱地址，然后回车，之后会提示文件保存的路径，直接回车确认（注意记住文件保存的路径），最后会两次提示你输入密码（输入密码是看不到的）；</p>
-<p>第二步：生成ssh后，根据刚保存路径可以看到两个文件，一个是id_rsa，另一个是id_rsa.pub，打开id_rsa.pub（可以使用notepadd++打开），全选复制内容；</p>
-<p>第三步：回到GitHub，点击右上角头像处，有个settings，进入后点击SSH and GPG keys，然后点击New SSH key创建<br>新的ssh密钥。</p>
-<p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/new-ssh.png" alt="image"></p>
-<p>其中Title自定义即可，而Key为刚刚在id_rsa.pub文件中全选复制的内容，最后点击Add SSH key即完成整体的配置。</p>
-<p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/new-ssh-html.png" alt="image"></p>
-<h2 id="5-创建本地仓库与GitHub同步"><a href="#5-创建本地仓库与GitHub同步" class="headerlink" title="5.创建本地仓库与GitHub同步"></a>5.创建本地仓库与GitHub同步</h2><p>新建一个文件夹作为本地仓库（建议不要使用中文），在新建的文件夹中右键，然后点击Git Bash Here，依次输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git config --global user.name &quot;Your&apos;s name&quot;</span><br><span class="line">git config --global user.email &quot;Your&apos;s email address&quot;</span><br></pre></td></tr></table></figure></p>
-<p>其中Your’s name更改成你的GitHub用户名，Your’s email address更改成你的GitHub邮箱地址即可。</p>
-<p>之后在新建一个README.md文件，随便填充一些内容（可使用notepad++打开），输入一下命令完成提交<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin git@github.com:yourname/yourname.github.io.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
-<p>其中<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:yourname/yourname.github.io.git更改成刚在GiitHub中新建的存储库的地址</p>
-<p>获取git地址方式：</p>
-<ol>
-<li>进入GitHub，点击右上角头像有个your profile，然后进入；</li>
-<li>进入后在Popular repositories能看到存储库，进入存储库；</li>
-<li>存储库页面有个Clone or dowinload，在这里就能获取到地址了，有HTTPS和SSH两种方式。</li>
-</ol>
-<p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/get-git-url.png" alt="image"></p>
-<p>至此进入到GitHub的存储库就能看到下面有一个刚提交的README.md的文档了。</p>
-<h2 id="6-安装HEXO"><a href="#6-安装HEXO" class="headerlink" title="6.安装HEXO"></a>6.安装HEXO</h2><p>在桌面空白处点击右键，选择Git Bash Here，先确认Node.js是否安装成功，输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node</span><br></pre></td></tr></table></figure></p>
-<p>当提示符变成&gt;符号代表安装成功，ctrl+c退出node模式，一直到出现$符号才算退出成功了。</p>
-<p>接下来开始正式安装HEXO，输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
-<p>安装过程需要耐心等待一段时间，安装成功后，可以输入以下命令查看版本信息</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo version</span><br></pre></td></tr></table></figure>
-<h2 id="7-配置HEXO到GitHub"><a href="#7-配置HEXO到GitHub" class="headerlink" title="7.配置HEXO到GitHub"></a>7.配置HEXO到GitHub</h2><p>新建一个文件夹，右键打开Git Bash Here<br>输入以下配置命令，配置HEXO环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init       //初始化hexo</span><br><span class="line">npm install     //安装依赖包</span><br></pre></td></tr></table></figure></p>
-<p>输入以下命令调试本地博客，地址为：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></p>
-<p>配置HEXO到GitHub，打开根目录下的_config.yml文件（可以使用notepad++），往下拖到最后部分可以看到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deploy: </span><br><span class="line">  type:</span><br></pre></td></tr></table></figure></p>
-<p>将其更改成，特别注意，该配置文件中，每个: 后面都有个空格。其中<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:yourname/yourname.github.io.git替换成自己版本库的地址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:  </span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
-<p>保存后，在根目录文件夹打开Git Bash Here输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<p>如果出现==ERROR Deployer not found: git==异常时，输入以下命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p>然后重新执行刚刚的两条命令，如果弹出对话框，输入GitHub的密码即可，这个时候就可以用<a href="http://username.github.io（其中username必须是你注册时的username）查看博客了。" target="_blank" rel="noopener">http://username.github.io（其中username必须是你注册时的username）查看博客了。</a></p>
-<p>至此完成了整个博客的搭建啦~！！！</p>
-<p><strong>小结：以下为HEXO常用命令：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo n &quot;我的博客&quot;  # hexo new &quot;我的博客&quot; - 新建文章的缩写</span><br><span class="line">hexo g            # hexo generate - 生成静态网页的缩写</span><br><span class="line">hexo s            # hexo server - 启动服务预览的缩写</span><br><span class="line">hexo d            # hexo deploy - 开始部署的缩写</span><br><span class="line">hexo clean        # 清楚缓存</span><br><span class="line">hexo deploy -g    # 组合命令，生成后部署</span><br><span class="line">hexo server -g    # 组合命令，生成后启动服务预览</span><br></pre></td></tr></table></figure></p>
-<p>接下来就是绑定自己的域名部分了<del>~</del>~~~~</p>
-<h1 id="二、将博客绑定到自己的域名上"><a href="#二、将博客绑定到自己的域名上" class="headerlink" title="二、将博客绑定到自己的域名上"></a>二、将博客绑定到自己的域名上</h1><p>我是使用GoDaddy + DNSPOD来绑定的，如果有更好的，希望能分享让我学习学习。</p>
-<p>1.首先需要在GoDaddy中注册一个账号，并且购买一个域名；<br>2.然后需要在DNSPOD中注册一个账号，并解析域名（购买的域名）；<br>3.登录GoDaddy，找到我的域名并进入管理DNS，将其设置为自定义域名服务武器，如：</p>
-<p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/binding-domain-name1.png" alt="image"><br><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/binding-domain-name2.png" alt="image"></p>
-<p>4.登录DNSPOD配置域名解析信息</p>
-<p>在记录管理中，添加两条记录，如：</p>
-<p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/binding-domain-name3.png" alt="image"></p>
-<p>其中GitHub的IP获取方式为，打开CMD控制台，输入以下命令即可获取到IP，其中将username替换成自己的用户名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping username.github.io</span><br></pre></td></tr></table></figure></p>
-<p>5.打开本地的HEXO下的source文件夹，新建一个CNAME文件（无后缀名），打开编辑文件，添加你的网站域名，如***.com，然后使用hexo g 和 hexo d上传部署。注意：不需要前面的http://，也不需要www。如：</p>
-<p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/binding-domain-name4.png" alt="image"></p>
-<p>6.最后等待DNS配置生效即可，过10分钟后在去访问域名看看是否配置成功，至此完成博客绑定到自己的域名上。</p>
-
+<p>进入创建页面，库名称Repository name是必填项（==<em>格式为：username.github.</em>io，其中username必须是你注册时的username，我开始就进了这个坑o(╥﹏╥)o**==），Description为描述，其余的不需更改什么，最后直接点击Create repository就完成了。<br>
+        
+          <a class="article-more-a" href="/2018/04/04/使用GitHub-Hexo搭建属于自己的域名博客/#more">more >></a>
+        
       
 
       

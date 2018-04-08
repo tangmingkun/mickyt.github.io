@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/binding-domain-name2.png">
 <meta property="og:image" content="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/binding-domain-name3.png">
 <meta property="og:image" content="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/binding-domain-name4.png">
-<meta property="og:updated_time" content="2018-04-08T09:28:47.510Z">
+<meta property="og:updated_time" content="2018-04-08T09:38:26.034Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用GitHub+Hexo搭建属于自己的域名博客">
 <meta name="twitter:description" content="刚搭建了一个博客，具体总结一下我搭建过程以及踩过的坑。 一、搭建博客1.安装git并注册GitHub账号安装git就不说了，网上有很多安装教程，到https://github.com上注册一个账号，注意记住username，创建存储库时要用到。 2.安装Node.js下载Node.js，一直Next即可。 3.GitHub配置登录GitHub，点击New repository进行创建一个新的存储库">
@@ -163,8 +163,7 @@
 <h2 id="2-安装Node-js"><a href="#2-安装Node-js" class="headerlink" title="2.安装Node.js"></a>2.安装Node.js</h2><p>下载<a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a>，一直Next即可。</p>
 <h2 id="3-GitHub配置"><a href="#3-GitHub配置" class="headerlink" title="3.GitHub配置"></a>3.GitHub配置</h2><p>登录GitHub，点击New repository进行创建一个新的存储库</p>
 <p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/new-repository.png" alt="image"></p>
-<p>进入创建页面，库名称Repository name是必填项（==<em>格式为：username.github.</em>io，其中username必须是你注册时的username，我开始就进了这个坑o(╥﹏╥)o**==），Description为描述，其余的不需更改什么，最后直接点击Create repository就完成了。</p>
-<p><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/new-repository-html.png" alt="image"></p>
+<p>进入创建页面，库名称Repository name是必填项（==<em>格式为：username.github.</em>io，其中username必须是你注册时的username，我开始就进了这个坑o(╥﹏╥)o**==），Description为描述，其余的不需更改什么，最后直接点击Create repository就完成了。<br><a id="more"></a><br><img src="https://blog-data-1256379276.cos.ap-guangzhou.myqcloud.com/build-blog/new-repository-html.png" alt="image"></p>
 <h2 id="4-配置GitHub-SSH密钥"><a href="#4-配置GitHub-SSH密钥" class="headerlink" title="4.配置GitHub SSH密钥"></a>4.配置GitHub SSH密钥</h2><p>第一步：在桌面空白处点击右键，选择Git Bash Here完成生成ssh步骤<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your&apos;s emaill address&quot;</span><br></pre></td></tr></table></figure></p>
 <p>将your’s emaill address更改为你注册的GitHub邮箱地址，然后回车，之后会提示文件保存的路径，直接回车确认（注意记住文件保存的路径），最后会两次提示你输入密码（输入密码是看不到的）；</p>
 <p>第二步：生成ssh后，根据刚保存路径可以看到两个文件，一个是id_rsa，另一个是id_rsa.pub，打开id_rsa.pub（可以使用notepadd++打开），全选复制内容；</p>
